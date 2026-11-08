@@ -1,0 +1,8 @@
+{
+  "name": "xbrain-design",
+  "owner": { "name": "Vlad Demchyk" },
+  "metadata": { "description": "XBrain Design: design skills, agents and starter templates for Claude Code and Claude Desktop." },
+  "plugins": [
+    { "name": "xbrain-design", "source": "./", "description": "Design for your own products, from value to code, with motion, quality and accessibility." }
+  ]
+}

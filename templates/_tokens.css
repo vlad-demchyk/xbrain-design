@@ -1,0 +1,18 @@
+/* xbrain-design starter tokens. Change these to the product's own system (design-system skill);
+   every template reads only these variables. Fonts: self-host with Cyrillic subsets. */
+:root{
+  --ground:#0b0b0d; --raised:#141417; --card:#1b1b1f; --line:rgba(255,255,255,.1);
+  --text:#efede8; --text-2:#aeaba4; --text-3:#85827c;
+  --brand:#7d74e0; --brand-soft:rgba(125,116,224,.16); --on-brand:#fff;
+  --ok:#2fb684; --warn:#f5b13d; --err:#f0666a;
+  --display:"Onest","Geist","Inter Tight",system-ui,sans-serif;
+  --text-font:"Geist","Onest",system-ui,sans-serif;
+  --mono:"Geist Mono","IBM Plex Mono",ui-monospace,monospace;
+  --r:14px; --r-l:24px;
+}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--ground);color:var(--text);font:400 18px/1.6 var(--text-font);-webkit-font-smoothing:antialiased}
+.k{font:500 13px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.btn{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:999px;font:600 15px/1 var(--text-font);background:var(--text);color:var(--ground)}
+.btn.ghost{background:none;color:var(--text);border:1px solid var(--line)}
+.ph{display:grid;place-items:center;border:1px dashed var(--line);border-radius:var(--r);color:var(--text-3);font:500 13px/1.4 var(--mono);text-align:center;padding:16px;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(255,255,255,.02) 12px 24px)}
