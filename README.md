@@ -11,6 +11,7 @@ Start with the `design-start` skill: it sets the order of work and names the res
 |---|---|
 | `design-start` | The order of work and the result of each step; the person's design decisions in `references/decisions.md` |
 | `design-types` | Design types with their sizes, states and checks: site, product page, pricing, docs, app screen, onboarding, email, carousel, ad, cover, store screenshots, deck, video, brand kit, design system |
+| `design-styles` | Named styles (canvas-light, the XBrain site's own, and nine more), about thirty named patterns, and a glossary of names and parameters so a design is asked for by name |
 | `design-direction` | Reference sites studied live (scroll frames, contact sheets, shared traits), a concept, 2-4 style tiles with the same copy, the person's choice |
 | `design-copy` | The product's value from its own data (idea, need, mechanism, proof, alternatives), then plain factual words for designs |
 | `design-materials` | A full demo instance with placeholder data, real screenshots at 2x, crops, import into the studio |
@@ -27,7 +28,7 @@ Start with the `design-start` skill: it sets the order of work and names the res
 
 ## Starter designs
 
-`templates/`: a style tile, a landing page in chapters, a product screen with callouts, an Open Graph
+`templates/`: a style tile, a landing page in chapters, the canvas-light style (`canvas-light.html`), a product screen with callouts, an Open Graph
 image, carousel slides, an email and deck slides. They read only the variables of `templates/_tokens.css`,
 so one file recolours them for a product. With XBrain the same set is the design
 `Designs/Стартовий набір дизайну`.

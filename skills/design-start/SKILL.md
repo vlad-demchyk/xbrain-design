@@ -17,7 +17,7 @@ the next step starts.
 | 1. Value | What the product does, its idea, why it is needed, why it beats the alternatives, from the product's own data; agreed with the person | design-copy | a value note |
 | 2. Type | The artifact type and its deliverables: sizes, states, languages | design-types | the type's checklist in the task |
 | 3. References | The person's references studied live: scroll frames, contact sheets, shared traits | design-direction | a references note |
-| 4. Directions | A concept, then 2-4 style tiles with the same factual copy; the person picks | design-direction | the tiles and the person's choice |
+| 4. Directions | A concept, then 2-4 style tiles with the same factual copy; the person picks. A request that names a style or patterns (`canvas-light`, `story-track`…) takes them from the catalogue | design-direction, design-styles | the tiles and the person's choice, or the named style with its parameters |
 | 5. Materials | Real product shots from a full demo instance; motion pieces from the studio | design-materials, design-motion | a materials folder, renders |
 | 6. Design | The pages in the chosen direction, approved by the person | design-system, design-marketing-site | an approved design |
 | 7. Build | Code from the approved design | (XBrain: brain-design-build) | commits linked to the pages |

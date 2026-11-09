@@ -1,0 +1,34 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Canvas light</title><link rel="stylesheet" href="_tokens.css">
+<!-- The canvas-light style (design-styles): the XBrain site's language. It overrides the starter tokens
+     with the light ones of the style; change --brand (accent) and the fields for another product. -->
+<style>
+:root{--ground:#fbfbfe;--raised:#f6f6fc;--card:#fff;--line:#e5e6f0;--text:#141416;--text-2:#5c5d72;--text-3:#5f6174;
+--brand:#5f57b3;--brand-fill:#655cbd;--brand-soft:rgba(101,92,189,.07);--on-brand:#fff;
+--field-lav:#e9e7fb;--field-sky:#e1eff8;--field-mint:#dcf3e8;--field-sand:#fbeedb;--field-rose:#fbe6e7;--field-ink:#141416;
+--sel:#5f57b3;--space:#c0307a;--guide:#e5401a;--dot:#cfd1e2;
+--display:"Inter Tight","Onest",system-ui,sans-serif;--text-font:"Inter Tight",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--r:10px;--r-l:14px;--r-xl:20px}
+.w{max-width:1600px;margin:0 auto;padding:0 2.5vw}
+.bar{position:sticky;top:12px;z-index:5;width:min(992px,calc(100% - 24px));margin:12px auto 0;display:flex;align-items:center;gap:20px;height:56px;padding:0 16px;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r-l)}
+.bar b{margin-right:auto}.btn{background:#000;color:#fff}
+.ch{position:relative;padding:144px 0}.corners{position:absolute;top:20px;left:2.5vw;right:2.5vw;display:flex;justify-content:space-between;font:500 13px/1 var(--mono)}
+.giant{font:650 clamp(40px,1rem + 5.4vw,120px)/.92 var(--display);letter-spacing:-.035em;text-transform:uppercase;margin:0;max-width:16ch}
+.lead{color:var(--text-2);font-size:21px;max-width:46ch;margin:28px 0 0}
+.lav{background:var(--field-lav)}.sky{background:var(--field-sky)}.mint{background:var(--field-mint)}.key{background:var(--brand-fill);color:#fff}.key .lead{color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:64px}.tile{position:relative;min-height:420px;border-radius:var(--r-xl);padding:44px 32px;display:grid;align-content:space-between}
+.tile:nth-child(1){background:var(--brand-fill);color:#fff}.tile:nth-child(2){background:var(--field-ink);color:#fff}.tile:nth-child(3){background:#fff;border:1px solid var(--line)}
+.tile b{font:650 clamp(64px,1rem + 7vw,150px)/.88 var(--display);letter-spacing:-.05em}.tile .k{color:inherit}
+/* canvas-frame: a selected layer of the design canvas */
+.canvas{margin-top:72px;padding:56px 24px;border:1px solid var(--line);border-radius:var(--r-l);background:var(--raised) radial-gradient(var(--dot) 1px,transparent 1px) 0 0/24px 24px;text-align:center}
+.cv{position:relative;display:inline-block;outline:1.5px solid var(--sel);background:#fff;min-width:60%;min-height:280px}
+.cv .nm{position:absolute;left:-1px;bottom:calc(100% + 6px);font:500 11px/1 var(--text-font);color:var(--sel)}
+.cv i{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;background:#fff;border:1.5px solid var(--sel);border-radius:2px}
+.cv .sz{position:absolute;left:50%;top:calc(100% + 8px);transform:translateX(-50%);padding:1px 6px;border-radius:4px;background:var(--sel);color:#fff;font:500 11px/1.4 var(--text-font)}
+@media (max-width:900px){.tiles{grid-template-columns:1fr}.tile{min-height:300px}}
+</style></head><body>
+<div class="bar"><b>[Product]</b><a class="btn">[Get access]</a></div>
+<section class="ch lav"><div class="corners" aria-hidden="true"><span>[Product · category]</span><span>[Stage 1 of 7]</span></div><div class="w"><p class="k">[Eyebrow]</p><h1 class="giant">[The promise.] <span style="color:var(--brand)">[The accent part.]</span></h1><p class="lead">[How, in two lines: what the person does and what the product does.]</p></div></section>
+<section class="ch sky"><div class="corners" aria-hidden="true"><span>[Chapter name]</span><span>[Chapter 02]</span></div><div class="w"><h2 class="giant">[One object gathers all the work]</h2><p class="lead">[The pinned scene goes here: story-track with assembly-card, weak-spots and action-feed.]</p>
+<div class="canvas" aria-hidden="true"><div class="cv"><span class="nm">[Layer name]</span><i style="left:0;top:0"></i><i style="left:50%;top:0"></i><i style="left:100%;top:0"></i><i style="left:100%;top:50%"></i><i style="left:100%;top:100%"></i><i style="left:50%;top:100%"></i><i style="left:0;top:100%"></i><i style="left:0;top:50%"></i><span class="sz">[960 × 280]</span></div></div></div></section>
+<section class="ch"><div class="corners" aria-hidden="true"><span>[Measurements]</span><span>[Chapter 03]</span></div><div class="w"><h2 class="giant">[Measured on real work]</h2><ul class="tiles" style="list-style:none;padding:0"><li class="tile"><span class="k">[What]</span><b>[N]</b><span>[Condition, date]</span></li><li class="tile"><span class="k">[What]</span><b>[N]</b><span>[Condition]</span></li><li class="tile"><span class="k">[What]</span><b>[N]</b><span>[Condition]</span></li></ul></div></section>
+<section class="ch key"><div class="corners" aria-hidden="true"><span>[Decisive stage]</span><span>[Stage 6 of 7]</span></div><div class="w"><h2 class="giant">[Your word]</h2><p class="lead">[The decisive moment: the particle-object acts here.]</p></div></section>
+</body></html>
