@@ -9,6 +9,7 @@ Start with the `design-start` skill: it sets the order of work and names the res
 
 | Skill | What it does |
 |---|---|
+| `brain-design`, `brain-design-build`, `brain-design-comments`, `brain-design-html`, `brain-design-sync`, `brain-design-visual-qa` | Designs kept in the XBrain brain: the canvas, versions, building code from a design, comments, HTML screens, sync with Claude Design, visual QA. Moved here from XBrain's core, so design is a plugin a person installs when they want it |
 | `design-start` | The order of work and the result of each step; the person's design decisions in `references/decisions.md` |
 | `design-types` | Design types with their sizes, states and checks: site, product page, pricing, docs, app screen, onboarding, email, carousel, ad, cover, store screenshots, deck, video, brand kit, design system |
 | `design-styles` | Named styles (canvas-light, the XBrain site's own, and nine more), about thirty named patterns, and a glossary of names and parameters so a design is asked for by name |
@@ -35,8 +36,9 @@ so one file recolours them for a product. With XBrain the same set is the design
 
 ## Works with
 
-- **XBrain**: designs live in the brain's `Designs/` (its skills brain-design, brain-design-html,
-  brain-design-build); the decisions note `Docs/Дизайн/Рішення з дизайну` is the living copy of
+- **XBrain**: designs live in the brain's `Designs/`; the brain-design skills that work with them are
+  part of this plugin. XBrain lists the plugin in its library, where it is installed for all of a
+  person's agents (globally) and is never required; the decisions note `Docs/Дизайн/Рішення з дизайну` is the living copy of
   `references/decisions.md`.
 - **xbrain-marketing**: positioning, copy, conversion, SEO and platform playbooks.
 - **LocalAI Studio** (studio.xformat): motion and video renders.
