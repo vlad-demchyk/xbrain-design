@@ -1,9 +1,21 @@
 {
   "name": "xbrain-design",
   "displayName": "XBrain Design",
-  "version": "0.3.1",
-  "description": "Design for your own products and the XBrain brain's designs (canvas, versions, build from a design, comments, HTML screens, sync, visual QA), from the product's value to code: the order of work, design types and their deliverables, reference research and style directions, a catalogue of named styles and patterns with a glossary of their parameters, words for designs, real product materials, marketing sites, design systems with Cyrillic type, motion through the studio, quality and accessibility (WCAG 2.2 AA), and a starter set of design templates.",
-  "author": { "name": "Vlad Demchyk" },
+  "version": "0.4.0",
+  "description": "A general design plugin: named styles and themes, patterns and a glossary of their parameters, the decisions and hooks that make designs strong with how to build them, choosing a direction by the product's type, UX rules and checklists, motion, design systems with Cyrillic type, accessibility (WCAG 2.2 AA), and the XBrain brain's designs (canvas, versions, build from a design, comments, sync, visual QA).",
+  "author": {
+    "name": "Vlad Demchyk"
+  },
   "license": "MIT",
-  "keywords": ["design", "ui", "ux", "landing", "marketing-site", "motion", "accessibility", "design-system", "brand"]
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "landing",
+    "marketing-site",
+    "motion",
+    "accessibility",
+    "design-system",
+    "brand"
+  ]
 }

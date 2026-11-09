@@ -5,9 +5,13 @@ description: The entry to design work in any project, the order from the product
 
 # Design work: the order and the results
 
-The person's design decisions are in `references/decisions.md` beside this skill. When the XBrain brain is
-connected, its note `Docs/Дизайн/Рішення з дизайну` is the living copy and wins; a new decision of the
-person goes there with its date and source. Decisions win over taste.
+Design decisions win over taste. The person's own decisions come first: their brain note
+(`Docs/Дизайн/Рішення з дизайну` when the XBrain brain is connected) or a decisions file in their
+project. `references/decisions.md` beside this skill holds the plugin author's decisions: the defaults
+for a person who has none yet and a worked example of how decisions are kept (each with its date,
+source and the person's words). A new decision of the person goes into their own place with its date
+and source. When a choice has no decision, `design-craft` gives a reasoned default from the
+product's group instead of a guess, and the hooks that make a page strong.
 
 This skill is the order. Each step names the skill that does it and the result that must exist before
 the next step starts.
@@ -15,13 +19,13 @@ the next step starts.
 | Step | Do | Skill | Result to keep |
 |---|---|---|---|
 | 1. Value | What the product does, its idea, why it is needed, why it beats the alternatives, from the product's own data; agreed with the person | design-copy | a value note |
-| 2. Type | The artifact type and its deliverables: sizes, states, languages | design-types | the type's checklist in the task |
+| 2. Type | The artifact type and its deliverables: sizes, states, languages | design-types, design-craft | the type's checklist and the product's type in the task |
 | 3. References | The person's references studied live: scroll frames, contact sheets, shared traits | design-direction | a references note |
-| 4. Directions | A concept, then 2-4 style tiles with the same factual copy; the person picks. A request that names a style or patterns (`canvas-light`, `story-track`…) takes them from the catalogue | design-direction, design-styles | the tiles and the person's choice, or the named style with its parameters |
+| 4. Directions | A concept, then 2-4 style tiles with the same factual copy; the person picks. A request that names a style or patterns (`canvas-light`, `story-track`…) takes them from the catalogue | design-direction, design-styles, design-craft | the tiles and the person's choice, or the named style with its parameters |
 | 5. Materials | Real product shots from a full demo instance; motion pieces from the studio | design-materials, design-motion | a materials folder, renders |
 | 6. Design | The pages in the chosen direction, approved by the person | design-system, design-marketing-site | an approved design |
 | 7. Build | Code from the approved design | (XBrain: brain-design-build) | commits linked to the pages |
-| 8. Check | Quality gate, accessibility audit, screenshots at 1440 and 390 (360 where asked), reduced motion | design-quality, design-accessibility | a report with checks and pictures |
+| 8. Check | Quality gate, accessibility audit, screenshots at 1440 and 390 (360 where asked), reduced motion | design-quality, design-accessibility, design-craft | a report with checks and pictures |
 
 Where the brain is connected, designs live in its `Designs/`. The skills that keep them are part of
 this plugin: brain-design (make, continue, list), brain-design-html (HTML screens, states,

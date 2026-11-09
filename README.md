@@ -1,6 +1,6 @@
 # XBrain Design
 
-One plugin for designing your own products, from the product's value to code. Built for Claude Code and
+A general plugin for strong, varied and effective designs: styles, themes, decisions, the hooks that hold attention and how to build them, from the product's value to code. Built for Claude Code and
 Claude Desktop; XBrain offers it in its library as a plugin for the whole system.
 
 Start with the `design-start` skill: it sets the order of work and names the result to keep at each step.
@@ -10,9 +10,10 @@ Start with the `design-start` skill: it sets the order of work and names the res
 | Skill | What it does |
 |---|---|
 | `brain-design`, `brain-design-build`, `brain-design-comments`, `brain-design-html`, `brain-design-sync`, `brain-design-visual-qa` | Designs kept in the XBrain brain: the canvas, versions, building code from a design, comments, HTML screens, sync with Claude Design, visual QA. Moved here from XBrain's core, so design is a plugin a person installs when they want it |
-| `design-start` | The order of work and the result of each step; the person's design decisions in `references/decisions.md` |
+| `design-start` | The order of work and the result of each step; design decisions: the person's own come first; `references/decisions.md` holds worked defaults |
 | `design-types` | Design types with their sizes, states and checks: site, product page, pricing, docs, app screen, onboarding, email, carousel, ad, cover, store screenshots, deck, video, brand kit, design system |
 | `design-styles` | Named styles (the ecosystem's own: canvas-light of XBrain, studio-cut of studio.xformat, ink-play of Coach, and nine more), about fifty named patterns, and a glossary of names and parameters so a design is asked for by name |
+| `design-craft` | The craft: decisions that make a page strong and hooks with how to build them (from the XBrain, studio and Coach sites), choosing a direction by the product's group (style families, landing structures, dials), the UX rules in priority order and an app checklist (rules adapted from UI/UX Pro Max, MIT) |
 | `design-direction` | Reference sites studied live (scroll frames, contact sheets, shared traits), a concept, 2-4 style tiles with the same copy, the person's choice |
 | `design-copy` | The product's value from its own data (idea, need, mechanism, proof, alternatives), then plain factual words for designs |
 | `design-materials` | A full demo instance with placeholder data, real screenshots at 2x, crops, import into the studio |
