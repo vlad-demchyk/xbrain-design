@@ -12,6 +12,9 @@ their behaviour) and **parameters** (the knobs each one has). Everything is in `
   when not, and an example in code or a template.
 - `references/patterns.md`: the patterns, each with what it is, its parameters and their defaults,
   accessibility and motion notes.
+- `references/builds.md`: how the ecosystem's own sites (canvas-light, studio-cut, ink-play) are
+  built: their file map, how their scenes move, what matters in them, the traps already met, and
+  their checks. Read it before building in one of these styles.
 - `references/glossary.md`: the person's glossary in Ukrainian: names, parameters, values, example
   requests, and the words for designs kept in the XBrain brain (which phrase starts which brain-design
   skill). Keep it in step with the two files above: a new style or pattern is added to all three.

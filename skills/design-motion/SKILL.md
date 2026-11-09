@@ -46,6 +46,24 @@ Everything moving at once; linear easing; spinning the camera for no reason; til
 ## 8. Check before handing over
 Watch the whole piece twice (once with sound), at desktop and phone width, with reduced motion on; measure the stage's box at every beat (no size change); confirm 60 fps; read every line at rest.
 
+## 8a. Scroll scenes and particle objects in code
+
+What the ecosystem's sites learned, in brief (the whole of it: design-styles, `references/builds.md`):
+
+- One damped progress value per scene (`--p`) written into a CSS property each frame; every piece reads
+  it in its own transform through `clamp()` and `calc()`. React does not re-render per frame.
+- The loop runs only while something moves and stops when every scene has landed; ease toward the
+  target and set it exactly once close, or the scene rests a hair off, tilted and soft.
+- Measure a moving node's parent, never the node: measuring the node feeds the output back into the
+  input and the scene hunts.
+- A pinned scene is a tall track with a sticky stage; a scene's length is its track's height.
+- A film drawn in HTML and CSS can be timed by its progress bar's animation (`animationend` turns the
+  scene), so pausing the bar pauses everything; it plays only in view, in a visible tab, without
+  reduced motion, with pause, back and next always there.
+- A particle object (three.js, loaded lazily) taken from a reference picture keeps the picture's
+  angle exactly; give it depth sparingly, move its parts with weights that fade in over an area (hard
+  part boundaries tear the form), and never let a canvas edge cut it.
+
 ## 9. Make it with the studio
 
 Motion for a product page or video is made with the studio (studio.xformat, LocalAI Motion), not
