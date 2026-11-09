@@ -12,7 +12,7 @@ Start with the `design-start` skill: it sets the order of work and names the res
 | `brain-design`, `brain-design-build`, `brain-design-comments`, `brain-design-html`, `brain-design-sync`, `brain-design-visual-qa` | Designs kept in the XBrain brain: the canvas, versions, building code from a design, comments, HTML screens, sync with Claude Design, visual QA. Moved here from XBrain's core, so design is a plugin a person installs when they want it |
 | `design-start` | The order of work and the result of each step; the person's design decisions in `references/decisions.md` |
 | `design-types` | Design types with their sizes, states and checks: site, product page, pricing, docs, app screen, onboarding, email, carousel, ad, cover, store screenshots, deck, video, brand kit, design system |
-| `design-styles` | Named styles (canvas-light, the XBrain site's own, and nine more), about thirty named patterns, and a glossary of names and parameters so a design is asked for by name |
+| `design-styles` | Named styles (the ecosystem's own: canvas-light of XBrain, studio-cut of studio.xformat, ink-play of Coach, and nine more), about fifty named patterns, and a glossary of names and parameters so a design is asked for by name |
 | `design-direction` | Reference sites studied live (scroll frames, contact sheets, shared traits), a concept, 2-4 style tiles with the same copy, the person's choice |
 | `design-copy` | The product's value from its own data (idea, need, mechanism, proof, alternatives), then plain factual words for designs |
 | `design-materials` | A full demo instance with placeholder data, real screenshots at 2x, crops, import into the studio |

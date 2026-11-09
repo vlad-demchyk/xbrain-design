@@ -15,6 +15,8 @@
 | Назва | Українською | Коротко | Головні параметри (за замовчуванням) |
 |---|---|---|---|
 | `canvas-light` | Робоче полотно | Стиль сайту XBrain: світлий, як вікно продукту; великі кольорові поля, дуже великий текст великими літерами, один об'єкт посередині, який збирає скрол-сцена; рамки, ручки й піни дизайн-канвасу як оздоблення сторінки; рука з часток на вирішальному кроці | `accent` (лавандовий #5f57b3), `fields` (lav, sky, mint, sand, rose), `display` (Inter Tight), `object` (картка задачі), `stages` (7), `canvas-chrome` (on), `particle-object` (hand), `motion` (scroll) |
+| `studio-cut` | Монтажна | Стиль studio.xformat: світла мова застосунку студії, цинкові сірі, майже чорний акцент і бронза, засічкові заголовки, малі радіуси (нічого округлого), вікно студії з полем режисера, монітором і таймлайном, справжні шаблони руху граються на сторінці | `accent` (#27272a), `bright` (бронза), `display` (Iowan Old Style), `zones`, `motion-runtime` (on), `motion-switch` (on), `radius` (6px) |
+| `ink-play` | Чорнило й лайм | Стиль Coach: чорнильні контури, жорсткі тіні без розмиття, лайм і корал, великі радіуси, Bricolage Grotesque, жива дошка з курсорами вчителя й учня, світи квесту для дітей | `lime`, `coral`, `display` (Bricolage Grotesque), `shadow` (hard), `cursors`, `world` (island), `theme` (light) |
 | `paper-editorial` | Папір | Довге читання на теплому папері, засічковий шрифт, примітки збоку | `paper` (warm), `accent` (oxblood), `columns` (2), `dropcap` (on) |
 | `dark-console` | Консоль | Інструмент розробника вночі: моношрифт, термінал, що друкує сам | `signal` (green), `scanlines` (off), `typing-speed` |
 | `swiss-grid` | Сітка | Сувора модульна сітка, один гротеск, червоний акцент | `columns` (12), `accent` (red), `rules` (on) |
@@ -64,6 +66,33 @@
 | `access-form` | Одне поле пошти, згода, помилки з підказкою | `endpoint`, `subject` |
 | `logo-strip`, `testimonial-wall`, `pricing-table`, `timeline`, `bento-grid`, `before-after` | Звичні блоки, просто за назвою | за design-types |
 
+### Зі стилю studio-cut (studio.xformat)
+
+| Назва | Що це | Параметри |
+|---|---|---|
+| `app-window-hero` | Вікно застосунку як перший екран: поле запиту з курсором, монітор, що наповнюється етапами, кроки збоку | `stages`, `rail`, `typing` |
+| `timeline-mock` | Таймлайн монтажу з доріжками, кліпами і плейхедом | `tracks`, `clip-colours` |
+| `type-zones` | Розділ на кожен тип результату, у вигляді свого шаблону | `zones`, `ink` |
+| `motion-player` | Справжній рушій руху продукту грає шаблон на сторінці | `template`, `autoplay-in-view` |
+| `before-after` | Картинка «до/після» з повзунком, що тягнеться і клавіатурою | `before`, `after`, `start` |
+| `cover-strip` | Обкладинки в ряд, нахиляються в 3D | `covers`, `tilt` |
+| `screen-looks` | Один кадр у різних виглядах (VHS, плівка, зерно, REC) | `looks` |
+| `translate-timeline` | Рядки оригіналу й перекладу, слова з'являються під час дубляжу | `languages` |
+| `karaoke-line` | Субтитри, що підсвічуються слово за словом | `lines` |
+| `pipeline-steps`, `install-wizard`, `agent-chat`, `mix-meters`, `demo-slot`, `motion-switch` | Кроки процесу, майстер встановлення, чат з агентом, індикатори звуку, слот для демо-відео, перемикач руху в шапці | за потребою |
+
+### Зі стилю ink-play (Coach)
+
+| Назва | Що це | Параметри |
+|---|---|---|
+| `hard-shadow-card` | Картка з чорнильною рамкою і зсунутою тінню без розмиття | `offset`, `accent` |
+| `hero-scene-cards` | Перший екран з карток продукту, що накладаються: урок з чіпами, обличчя, сертифікат, курсор, пляма й закарлючка | `cards`, `blob`, `squiggle` |
+| `live-board` | Жива дошка: двоє пишуть разом, кожен своїм курсором | `roles`, `cursor-colours`, `notes` |
+| `roles-split` | Дві колонки для двох ролей, кожна своїм кольором | `roles` |
+| `ease-steps` | Великі номери кроків про те, як це просто | `steps` |
+| `explainer-film` | Анімований фільм продукту на намальованій сцені з підписом і керуванням | `scenes`, `captions` |
+| `quest-map` | Шлях з зупинками через тематичний світ | `world`, `stops` |
+
 ### Оздоблення і навігація
 
 | Назва | Що це | Параметри |
@@ -88,6 +117,10 @@
 | `widths` | 1440, 390, 360 | ширини для знімків перевірки |
 
 ## Приклади запитів
+
+- «Зроби сторінку шаблонів у стилі `studio-cut`, патерни `type-zones`, `motion-player`, `cover-strip`; `bright=#2a5d86`.»
+- «Лендінг курсу в стилі `ink-play`, патерни `hero-scene-cards`, `live-board`, `ease-steps`, `faq`; `theme=dark`.»
+- «Дитячий екран у стилі `ink-play` з `quest-map`, `world=space`.»
 
 - «Зроби лендінг у стилі `canvas-light`, патерни: `window-drawing`, `story-track`, `assembly-card`,
   `stat-tiles`, `faq`, `access-form`; параметри: `accent=#2f7d6b`, `object=рахунок`, `stages=5`.»

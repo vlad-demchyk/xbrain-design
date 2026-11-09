@@ -78,3 +78,45 @@ visible, 4.5:1 text, motion that stops (WCAG 2.2.2) and a reduced-motion version
   inside a canvas-frame. Params: `fill-on-hover` (on).
 - **under-the-hood**: a mono line under each stage naming the skills, hooks and tools that do it.
   Params: `prefix` («Під капотом:»), `wide-only` (on).
+
+## From studio-cut (studio.xformat)
+
+- **app-window-hero** (director-monitor): the product's app window as the hero: a field where the
+  request is typed (a caret, a pressed button), a monitor that fills stage by stage (plan, cast,
+  animatic, motion, edit, covers), steps on a rail beside it. Params: `stages`, `rail` (on),
+  `typing` (on). The window is aria-hidden; the steps are a list in the text.
+- **timeline-mock**: an editor's timeline with named tracks (titles, video, music, effects), clips that
+  slide in and a playhead. Params: `tracks`, `clip-colours`.
+- **type-zones**: a section per kind of output, each taking the look (fonts, colours) of its own
+  template through zone variables. Params: `zones`, `ink` (light/dark per zone).
+- **motion-player**: the product's real motion engine playing a template inside the page, started in
+  view, paused out of it. Params: `template`, `autoplay-in-view` (on).
+- **before-after**: a picture split by a draggable divider with a keyboard handle and tags. Params:
+  `before`, `after`, `start` (50%).
+- **cover-strip**: covers in a row that tilt in 3D on hover and focus. Params: `covers`, `tilt`.
+- **screen-looks**: the same frame in looks (VHS, film, grain, letterbox, REC) to choose from. Params:
+  `looks`.
+- **translate-timeline**: source and target lines with waves and words appearing as a dub is made.
+  Params: `languages`.
+- **karaoke-line**: subtitles that light word by word, by the studio's editing rules. Params: `lines`.
+- **pipeline-steps**, **install-wizard**, **agent-chat**, **mix-meters**, **demo-slot** (a video
+  slot that shows «demo soon» until a clip is added), **motion-switch** (a header toggle that stops
+  all motion).
+
+## From ink-play (Coach)
+
+- **hard-shadow-card**: a card with an ink border and an offset shadow without blur; buttons and
+  chips the same. Params: `offset` (0.375rem), `accent` (lime/coral/none).
+- **hero-scene-cards**: a playful hero of overlapping product cards (a lesson with chips, live faces,
+  a certificate with a seal, a cursor) over a blob and a squiggle. Params: `cards`, `blob`,
+  `squiggle`.
+- **live-board**: a board where two people write at once, each with a named cursor in their colour,
+  and notes that appear. Params: `roles`, `cursor-colours`, `notes`.
+- **roles-split**: two columns for the two roles (teacher, student), each with its own colour.
+  Params: `roles`.
+- **ease-steps**: numbered steps in big display numbers that say how easy it is. Params: `steps` (3-4).
+- **explainer-film**: an animated film of the product on a drawn stage (dot grid, ink edges), a
+  caption beside it, controls under both (play, scenes). Params: `scenes`, `captions`. Reduced
+  motion: a still per scene.
+- **quest-map**: a journey of stops on a path through a themed world (sky, ground, path), done stops
+  in lime. Params: `world`, `stops`.

@@ -1,6 +1,6 @@
 ---
 name: design-styles
-description: A catalogue of named visual styles and page patterns with their parameters, so a design is asked for and built by name («зроби лендінг у стилі canvas-light з патернами story-track і stat-tiles, акцент лавандовий»). Holds the XBrain landing's own style (canvas-light) and nine others, about thirty patterns, and the person's glossary of names and parameters. Use it on «у стилі …», «який стиль», «назви стиль», «стиль як на лендінгу XBrain», «зроби як XBrain», «глосарій», «які є стилі», «які патерни», «з яким параметром», and whenever a request names a style or pattern from references/glossary.md.
+description: A catalogue of named visual styles and page patterns with their parameters, so a design is asked for and built by name («зроби лендінг у стилі canvas-light з патернами story-track і stat-tiles, акцент лавандовий»). Holds the ecosystem's own styles (canvas-light of XBrain, studio-cut of studio.xformat, ink-play of Coach) and nine others, about fifty patterns, and the person's glossary of names and parameters. Use it on «у стилі …», «який стиль», «назви стиль», «стиль як на лендінгу XBrain», «зроби як XBrain», «як у студії», «як у Coach», «глосарій», «які є стилі», «які патерни», «з яким параметром», and whenever a request names a style or pattern from references/glossary.md.
 ---
 
 # Styles and patterns by name

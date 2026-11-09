@@ -58,6 +58,102 @@ styles/site.css, story.css, tokens.css). Template: `templates/canvas-light.html`
 
 ---
 
+## studio-cut (Монтажна)
+
+The style of studio.xformat.net (`apps/studio` in the XFormat repository): the video studio's own
+light app language, so the site and the app read as one product. Quiet, exact, editorial; the
+product's real motion engine plays inside the page.
+
+- **Central object:** the studio's app window as the hero: a director field where a request is typed,
+  a monitor that fills with the plan, the cast, an animatic, motion, the edit and the covers, a
+  timeline with tracks under it and a status bar with meters.
+- **Story:** sections by what the studio makes (film types), each a zone that takes the look of its
+  own opening template; demos, a guide, a catalogue of templates, questions, download.
+- **Type:** a serif display (Iowan Old Style / Palatino / Georgia) for headings, the system sans for
+  text and UI, the system mono for codes; modest sizes (hero clamp(2.25rem, 1.4rem + 3vw, 3.75rem)).
+- **Palette:** zinc neutrals (#f4f4f5 page, white surfaces, #18181b text, #e4e4e7 lines), a near-black
+  accent (#27272a) with a warm bronze (#8a6528) as the bright accent; clip colours of the timeline
+  (video blue, image ochre, audio teal, titles plum) and a karaoke yellow; dark ink panels for media.
+- **Shape:** small radii 3, 4, 6, 8 px; nothing is a pill. Thin lines, soft shadows.
+- **Motion:** the studio's real motion runtime plays the templates (openers, finals, transitions,
+  titles); karaoke subtitles by the studio's rules; a motion switch in the header, and reduced motion,
+  stop everything (`html[data-motion="off"]`).
+- **Product shown as:** the app window drawn in HTML with the studio's components, real renders and
+  clips, a timeline mock, before/after of a picture, covers in 3D.
+
+Tokens: `--bg #f4f4f5; --surface #fff; --text #18181b; --muted #62626b; --line #e4e4e7; --accent
+#27272a; --accent-bright #8a6528; --violet #2a5d86; --mint #2f6b4a; --ink-bg #1c1c1f; --kara #ffd400;
+--radius 6px; --wrap 1200px`. Fonts of templates (OFL) are served by the site.
+
+Parameters:
+
+| Parameter | Values | Default |
+|---|---|---|
+| `accent` | a near-black or a deep colour | #27272a |
+| `bright` | the warm highlight | bronze #8a6528 |
+| `display` | a serif with Cyrillic | Iowan Old Style / Palatino |
+| `zones` | per section: the template whose look it takes | one per film type |
+| `motion-runtime` | on / off: real templates play in the page | on |
+| `motion-switch` | on / off: the header toggle | on |
+| `radius` | 3-8px | 6px |
+
+Use for: creative tools, media and video products, anything whose output should be shown playing.
+Avoid for: a product with no visual output to show.
+
+Reference build: `apps/studio/src` (StudioOpening, TimelineMock, Zone, TypeCard, MotionPlayer,
+BeforeAfter, CoverStrip, ScreenLooks, TranslateDemo, SongDemo, PipelineSteps, InstallWizard;
+styles/tokens.css, sections.css).
+
+---
+
+## ink-play (Чорнило й лайм)
+
+The style of Coach (coach.xformat.net, `apps/coach` in the XFormat repository): a learning platform's
+friendly, hand-made language, deliberately apart from the other products. Ink outlines, hard shadows,
+lime and coral, a live board with two cursors.
+
+- **Central object:** a hero scene of cards: a lesson card with chips («check», «words»), live faces,
+  a certificate with a seal, the teacher's cursor, over a blob and a hand-drawn squiggle; a desk and a
+  phone shot beside it.
+- **Story:** roles (teacher, student), what is easy in it (numbered steps), features, a live board
+  where the teacher (coral cursor) and the student (violet cursor) write together, an animated film
+  of the platform, real use, questions, a call to action.
+- **Type:** a characterful grotesk display (Bricolage Grotesque) and Geist for text, Geist Mono for
+  numbers.
+- **Palette:** ink #12142b, lime #d4f53c, coral #ff6a3d (coral text #d4451a for 4.5:1), violet #8f89ff
+  and indigo #4c43e8 for focus; page #f6f6f3; a dark theme where ink becomes the page. For children,
+  the quest worlds: island, forest, space, city, winter, desert, ocean, candy, each with sky, ground
+  and path colours.
+- **Shape:** big radii (1.5-1.75rem, buttons and chips round), ink borders, hard offset shadows
+  (0.375rem 0.375rem 0 ink), a dot grid behind drawn stages.
+- **Motion:** playful but short: cursors that move and write, chips that pop, the film's stage with a
+  caption and controls; reduced motion keeps every state still.
+- **Product shown as:** the platform's own cards and board redrawn in this language, a desk and a
+  phone shot, the film.
+
+Tokens: `--ink #12142b; --lime #d4f53c; --coral #ff6a3d; --coral-text #d4451a; --violet #8f89ff;
+--indigo #4c43e8; --bg #f6f6f3; --surface #fff; --border #e4e4dc; --border-strong var(--ink);
+--radius 1.5rem; --shadow-hard 0.375rem 0.375rem 0 var(--ink)`.
+
+Parameters:
+
+| Parameter | Values | Default |
+|---|---|---|
+| `lime`, `coral` | the two brand colours | #d4f53c, #ff6a3d |
+| `display` | a characterful grotesk with Cyrillic | Bricolage Grotesque |
+| `shadow` | hard (offset, no blur) / none | hard |
+| `cursors` | the roles' cursor colours | teacher coral, student violet |
+| `world` | a quest world for children's screens | island |
+| `theme` | light / dark | light |
+
+Use for: education, communities, consumer products for people who are not technical, children.
+Avoid for: enterprise, finance, anything that must feel austere.
+
+Reference build: `apps/coach/src` (pages/LandingPage, film/CoachFilm, styles/tokens.css, app.css,
+film/film.css).
+
+---
+
 ## paper-editorial (Папір)
 
 Long reading on warm paper. Central object: a headline and a pull quote, no device. Story: an essay in
