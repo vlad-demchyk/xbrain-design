@@ -1,8 +1,17 @@
 {
   "name": "xbrain-design",
-  "owner": { "name": "Vlad Demchyk" },
-  "metadata": { "description": "XBrain Design: design skills, agents and starter templates for Claude Code and Claude Desktop." },
+  "owner": {
+    "name": "Vlad Demchyk"
+  },
+  "metadata": {
+    "description": "XBrain Design: an optional plugin of the XBrain ecosystem with design skills (named styles, patterns and a glossary, the brain's designs, motion, quality, accessibility), agents and starter templates for Claude Code and Claude Desktop."
+  },
   "plugins": [
-    { "name": "xbrain-design", "source": "./", "description": "Design for your own products, from value to code, with motion, quality and accessibility." }
+    {
+      "name": "xbrain-design",
+      "source": "./",
+      "description": "Design for your own products and the XBrain brain's designs, from value to code: named styles (canvas-light, studio-cut, ink-play and nine more), about fifty patterns with parameters, a glossary of names, how the ecosystem's sites are built, motion, quality and accessibility.",
+      "version": "0.3.0"
+    }
   ]
 }
