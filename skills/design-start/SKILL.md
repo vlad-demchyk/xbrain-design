@@ -23,9 +23,12 @@ the next step starts.
 | 7. Build | Code from the approved design | (XBrain: brain-design-build) | commits linked to the pages |
 | 8. Check | Quality gate, accessibility audit, screenshots at 1440 and 390 (360 where asked), reduced motion | design-quality, design-accessibility | a report with checks and pictures |
 
-Where the brain is connected, designs live in its `Designs/` (XBrain skills brain-design and
-brain-design-html put them there); a design that lives only in an agent's own canvas is closed to
-everyone else.
+Where the brain is connected, designs live in its `Designs/`. The skills that keep them are part of
+this plugin: brain-design (make, continue, list), brain-design-html (HTML screens, states,
+components), brain-design-build (code from a design), brain-design-comments, brain-design-visual-qa
+and brain-design-sync. A design that lives only in an agent's own canvas is closed to everyone else.
+Names of styles, patterns and parameters, and the words for designs in the brain: design-styles and
+its glossary.
 
 ## Rules on every step
 

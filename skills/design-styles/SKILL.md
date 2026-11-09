@@ -13,7 +13,8 @@ their behaviour) and **parameters** (the knobs each one has). Everything is in `
 - `references/patterns.md`: the patterns, each with what it is, its parameters and their defaults,
   accessibility and motion notes.
 - `references/glossary.md`: the person's glossary in Ukrainian: names, parameters, values, example
-  requests. Keep it in step with the two files above: a new style or pattern is added to all three.
+  requests, and the words for designs kept in the XBrain brain (which phrase starts which brain-design
+  skill). Keep it in step with the two files above: a new style or pattern is added to all three.
 
 ## How to use a request
 
