@@ -11,7 +11,7 @@
       "name": "xbrain-design",
       "source": "./",
       "description": "Design for your own products and the XBrain brain's designs, from value to code: named styles (canvas-light, studio-cut, ink-play and nine more), about fifty patterns with parameters, a glossary of names, how the ecosystem's sites are built, motion, quality and accessibility.",
-      "version": "0.3.0"
+      "version": "0.3.1"
     }
   ]
 }

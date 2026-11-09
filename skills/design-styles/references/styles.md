@@ -1,7 +1,33 @@
-# Styles
-
 Each style: what it is, the six traits (central object, story, type, palette, motion, how the product is
 shown), tokens, parameters with defaults, use and avoid. Names are lowercase keys used in requests.
+
+## Parameters → tokens
+
+One parameter of a request changes the same kind of variable in every style. The ecosystem's sites name
+their tokens differently, so this table says which variable each parameter sets. A parameter that is
+not a token (`object`, `stages`, `zones`, `world`, `motion`, `particle-object`) changes the structure,
+not a variable. Old names still understood: `bright` = `accent-2` (studio-cut), `lime` = `accent` and
+`coral` = `accent-2` (ink-play).
+
+| Parameter | canvas-light (`apps/brain`) | studio-cut (`apps/studio`) | ink-play (`apps/coach`) | templates (`_tokens.css`, `canvas-light.html`) |
+|---|---|---|---|---|
+| `accent` | `--acc` (text), `--acc-fill` (fills) | `--accent` | `--lime` | `--brand`, `--brand-fill` |
+| `accent-2` | none (one accent only) | `--accent-bright` | `--coral` (text `--coral-text`) | none |
+| `page` | `--page` | `--bg` | `--bg` | `--ground` |
+| `surface` | `--card` | `--surface` | `--surface` | `--card` / `--raised` |
+| `text` | `--text`, `--text-2` | `--text`, `--muted` | `--text`, `--text-muted` | `--text`, `--text-2` |
+| `line` | `--border` | `--line` | `--border` | `--line` |
+| `display` | `--f-display` | `--font-display` | `--font-display` | `--display` |
+| `text-font` | `--f-text` | `--font-sans` | `--font` | `--text-font` |
+| `mono` | `--f-mono` | `--font-mono` | `--font-mono` | `--mono` |
+| `radius` | `--r` (`--r-s`, `--r-l`, `--r-xl`) | `--radius` (`--radius-sm`, `--radius-lg`) | `--radius` (`--radius-sm`, `--radius-lg`, `--radius-full`) | `--r`, `--r-l` |
+| `shadow` | `--shadow` | `--shadow` | `--shadow-hard` | none |
+| `fields` | `--field-lav`, `-sky`, `-mint`, `-sand`, `-rose`, `-ink` | `--zone-*` per zone | `--quest-<world>-*` | `--field-*` |
+| `key-field` | `--acc-fill` on the key stage | none | none | `--brand-fill` |
+| `canvas-chrome` | `--sel`, `--space`, `--guide`, `--canvas-dot` | none | none | `--sel`, `--space`, `--guide`, `--dot` |
+| `theme` | light only | light (dark ink panels) | `[data-theme]`: ink becomes `--bg` | light |
+
+A parameter marked «none» for a style is not offered for it: say so and offer the nearest one.
 
 ---
 
@@ -90,7 +116,7 @@ Parameters:
 | Parameter | Values | Default |
 |---|---|---|
 | `accent` | a near-black or a deep colour | #27272a |
-| `bright` | the warm highlight | bronze #8a6528 |
+| `accent-2` | the warm highlight (old name `bright`) | bronze #8a6528 |
 | `display` | a serif with Cyrillic | Iowan Old Style / Palatino |
 | `zones` | per section: the template whose look it takes | one per film type |
 | `motion-runtime` | on / off: real templates play in the page | on |
@@ -139,7 +165,9 @@ Parameters:
 
 | Parameter | Values | Default |
 |---|---|---|
-| `lime`, `coral` | the two brand colours | #d4f53c, #ff6a3d |
+| `accent` | the first brand colour (old name `lime`) | lime #d4f53c |
+| `accent-2` | the second brand colour (old name `coral`); text uses `--coral-text` | coral #ff6a3d |
+| `radius` | 1-1.75rem | 1.5rem |
 | `display` | a characterful grotesk with Cyrillic | Bricolage Grotesque |
 | `shadow` | hard (offset, no blur) / none | hard |
 | `cursors` | the roles' cursor colours | teacher coral, student violet |
