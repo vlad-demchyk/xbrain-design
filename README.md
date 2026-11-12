@@ -21,7 +21,7 @@ Start with the `design-start` skill: it sets the order of work and names the res
 | `design-system` | Tokens for dark and light, type pairs with Cyrillic, charts validated for colour blindness, components with states |
 | `design-motion` | Motion directed like a film and made with the studio (LocalAI Motion); loops and scroll scenes on a page; gaps become studio tasks |
 | `design-quality` | The quality gate before delivery: hierarchy, spacing, type, colour, targets, focus, forms, motion, honesty, speed |
-| `design-accessibility` | WCAG 2.2 AA: the audit with xanalyze, what only a person can check, and accessibility while designing |
+| `design-accessibility` | WCAG 2.2 AA: the audit with xaudit, what only a person can check, and accessibility while designing |
 
 ## Agents
 
@@ -43,7 +43,7 @@ so one file recolours them for a product. With XBrain the same set is the design
   `references/decisions.md`.
 - **xbrain-marketing**: positioning, copy, conversion, SEO and platform playbooks.
 - **LocalAI Studio** (studio.xformat): motion and video renders.
-- **XAnalyze**: the accessibility audit.
+- **XBrain Audit**: the accessibility audit.
 
 ## Install
 

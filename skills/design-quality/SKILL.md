@@ -5,7 +5,7 @@ description: Checks a front-end change for visual and UX quality before it is de
 
 # UI quality check for front-end work
 
-A short gate between "it renders" and "it is done". Each item has a number or a test, so it is checked, not felt. It does not replace the design (XBrain brain-design-build is the source of truth when a design exists) or the accessibility audit (design-accessibility runs xanalyze). Where the project has a design system or tokens, its values win over the defaults below: check against them.
+A short gate between "it renders" and "it is done". Each item has a number or a test, so it is checked, not felt. It does not replace the design (XBrain brain-design-build is the source of truth when a design exists) or the accessibility audit (design-accessibility runs xaudit). Where the project has a design system or tokens, its values win over the defaults below: check against them.
 
 Run it on the screens the change touches, at a phone width (375-390 px) and a desktop width, in the real app or page, not the source. Report which items were checked and which were not.
 
@@ -90,4 +90,4 @@ The EU Digital Services Act (art. 25) forbids online platforms interfaces that d
 
 ## Reporting
 
-In the person's language: what was checked, at which widths, with what tool (devtools, xanalyze, a contrast calculation), what was found and fixed, and what was not checked. A passed gate is not an accessibility conformance claim; run design-accessibility for that.
+In the person's language: what was checked, at which widths, with what tool (devtools, xaudit, a contrast calculation), what was found and fixed, and what was not checked. A passed gate is not an accessibility conformance claim; run design-accessibility for that.

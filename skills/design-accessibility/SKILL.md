@@ -1,11 +1,11 @@
 ---
 name: design-accessibility
-description: Verifies the accessibility of a site, a page or a project's code by running the installed xanalyze CLI, then triages the result and re-verifies the fix. Use it on «перевір доступність», «аудит a11y», «WCAG», «запусти xanalyze», «що дивитися при доступності», and before delivering any change that adds images, links, buttons, forms or headings.
+description: Verifies the accessibility of a site, a page or a project's code by running the installed xaudit CLI (XBrain Audit), then triages the result and re-verifies the fix. Use it on «перевір доступність», «аудит a11y», «WCAG», «запусти xaudit», «що дивитися при доступності», and before delivering any change that adds images, links, buttons, forms or headings.
 ---
 
-# Accessibility verification with xanalyze
+# Accessibility verification with XBrain Audit
 
-xanalyze does the measuring. This skill is the procedure around it: what to run, in what order, what to trust, what only a person can check, and how to prove a fix. The tool itself (commands, options, output, login, the agent loop) is the `xanalyze` skill of the `xanalyze@xanalyze` plugin; load it when you need more than the commands below. Do not re-implement a check by hand when xanalyze has it; call it.
+xaudit does the measuring. This skill is the procedure around it: what to run, in what order, what to trust, what only a person can check, and how to prove a fix. The tool itself (commands, options, output, login, the agent loop) is the `xaudit` skill of the `xaudit@xaudit` plugin; load it when you need more than the commands below. Do not re-implement a check by hand when xaudit has it; call it.
 
 It is a read-only tool. Never pass `--fix` unless the person asked for it. It is also not a conformance claim: a clean run means "nothing the tool can see", not "accessible".
 
@@ -13,23 +13,23 @@ It is a read-only tool. Never pass `--fix` unless the person asked for it. It is
 
 ## 1. Get the tool
 
-`xanalyze --version`. What this skill says about results holds from **0.72.0**; an older binary reports older behaviour (no target-size measurement, H30.2 on named links as serious, duplicate ids across JSX branches, and before 0.72.0 a `=>` inside a JSX attribute hid every attribute after it, so `onKeyDown`/`role`/`autoFocus` there were not seen). `make check-cli` in `~/repositories/XAnalyze` says whether the installed binary matches the source; without the binary, `./venv/bin/python cli.py ...` inside the repository runs the current code. Rebuilding and replacing the installed app are the person's decision.
+`xaudit --version` (the command was `xanalyze` before 0.74.0; that name still works as an alias). What this skill says about results holds from **0.72.0**; an older binary reports older behaviour (no target-size measurement, H30.2 on named links as serious, duplicate ids across JSX branches, and before 0.72.0 a `=>` inside a JSX attribute hid every attribute after it, so `onKeyDown`/`role`/`autoFocus` there were not seen). `make check-cli` in `~/repositories/xbrain-audit` says whether the installed binary matches the source; without the binary, `./venv/bin/python cli.py ...` inside the repository runs the current code. Rebuilding and replacing the installed app are the person's decision.
 
 ## 2. Choose what to audit
 
 | Target | Command | Notes |
 |---|---|---|
-| A project's code | `xanalyze audit <repo or theme folder> --language <uk|it|en> --json --styled-report <file.html>` | Static. Reads templates, so PHP/Twig/JSX fragments are judged as fragments. |
-| One page | `xanalyze audit <url> --browser --json` | Adds axe-core, HTML_CodeSniffer, the focus/keyboard pass and target size. |
-| A whole site | `xanalyze audit <url> --depth 10 --max-pages 700 --browser --site-controls --json --styled-report <file>` | The crawler follows links from the start page. About 40 minutes for ~380 pages uncached, much less cached. |
-| One .html file | `xanalyze audit <file.html> --browser` | |
-| Pages behind a sign-in | `xanalyze login <url>` once, then the audit | Test accounts only; see the `xanalyze` skill. |
+| A project's code | `xaudit audit <repo or theme folder> --language <uk|it|en> --json --styled-report <file.html>` | Static. Reads templates, so PHP/Twig/JSX fragments are judged as fragments. |
+| One page | `xaudit audit <url> --browser --json` | Adds axe-core, HTML_CodeSniffer, the focus/keyboard pass and target size. |
+| A whole site | `xaudit audit <url> --depth 10 --max-pages 700 --browser --site-controls --json --styled-report <file>` | The crawler follows links from the start page. About 40 minutes for ~380 pages uncached, much less cached. |
+| One .html file | `xaudit audit <file.html> --browser` | |
+| Pages behind a sign-in | `xaudit login <url>` once, then the audit | Test accounts only; see the `xbrain-audit` skill. |
 
 The crawl is the only way to get the cross-page rules (translated-link targets, duplicate titles, hreflang). Per-page runs lose them.
 
 A sitemap is not a list of pages. A WordPress sitemap under WPML listed 98 addresses on a site with ~370 published pages. Cross-check the crawled count against the database (`wp_posts` by `post_type` and `wp_icl_translations.language_code`) before saying "every page".
 
-Put outputs outside the repository, in a dated folder (`~/Downloads/<project>-xanalyze-<date>/`), with `--json` and `--styled-report`. Use `--language` in the language the report is for.
+Put outputs outside the repository, in a dated folder (`~/Downloads/<project>-xaudit-<date>/`), with `--json` and `--styled-report`. Use `--language` in the language the report is for.
 
 A live site that is not the person's own or is production: ask before crawling it. A crawl is many requests.
 
@@ -60,7 +60,7 @@ A live site that is not the person's own or is production: ask before crawling i
 
 Every finding that will change the project is checked against the real HTML first: `curl` the page and read the element, and for a CMS read the value where it lives (WordPress: `_wp_attachment_image_alt` in `wp_postmeta`, theme meta, WPML translations per language). A tool finding is a lead, not a fact about the project.
 
-## 4b. What xanalyze cannot check: do these by hand
+## 4b. What xaudit cannot check: do these by hand
 
 Tell the person which of these were not covered, and do not write "conformant".
 
@@ -87,8 +87,8 @@ Visual and UX quality beyond accessibility is `design-quality`.
 
 1. Run the **same command** before and after, into two folders. Compare `distinct` and the specific rule ids, not the totals.
 2. The fixed cause is gone and nothing new appeared. A newly found problem after a fix is usually a page that was not reached before: compare the crawled address lists.
-3. The browser result is cached by the page's markup and the pass revision. After changing the **server** (a header, a stylesheet) add `XANALYZE_BROWSER_CACHE=<empty folder>` for a clean run. The first run after an upgrade that raised the pass revision is slow: the cache is rebuilt.
-4. For project code, run the project's own tests and lint as well; xanalyze does not replace them.
+3. The browser result is cached by the page's markup and the pass revision. After changing the **server** (a header, a stylesheet) add `XAUDIT_BROWSER_CACHE=<empty folder>` for a clean run. The first run after an upgrade that raised the pass revision is slow: the cache is rebuilt.
+4. For project code, run the project's own tests and lint as well; xaudit does not replace them.
 5. Say what was **checked** (command, version, pages, date), what **was not** (section 4b), and the residual risk.
 
 ## 7. Report
@@ -100,8 +100,8 @@ In the person's language. Separate verified facts, hypotheses, risks and what wa
 - It reads the page in one viewport unless `--breakpoints` is asked, and in one colour scheme per run (`--color-scheme`).
 - A crawl is capped by `--max-pages`; compare it with the source of truth.
 - Warnings of the engines are not defects; the tool demotes the known ones, and from 0.72.0 a code an engine update brings is reported as a note (`details.unverified_engine_code`) until someone weighs it. When a rule fires hundreds of times on one component, suspect the rule first and read the element.
-- If the tool itself looks wrong (a false positive that repeats), that is a task for the XAnalyze project, not a reason to suppress it silently in the report. A single finding a person has checked and judged false can be dismissed with its reason: `xanalyze ignore <fingerprint from audit --json> --reason "…"` in the project folder; every later run says how many were hidden and why, and those counts belong in the report.
-- Rule precision on real audits is measured, not assumed: `python -m audit.precision <audit.json> --template labels.jsonl` in the XAnalyze repository, label, then `--labels labels.jsonl`. Quote a precision only with its n; below five labelled findings it is "not measured".
+- If the tool itself looks wrong (a false positive that repeats), that is a task for the XBrain Audit project, not a reason to suppress it silently in the report. A single finding a person has checked and judged false can be dismissed with its reason: `xaudit ignore <fingerprint from audit --json> --reason "…"` in the project folder; every later run says how many were hidden and why, and those counts belong in the report.
+- Rule precision on real audits is measured, not assumed: `python -m audit.precision <audit.json> --template labels.jsonl` in the XBrain Audit repository, label, then `--labels labels.jsonl`. Quote a precision only with its n; below five labelled findings it is "not measured".
 
 ## 8. Accessibility while designing
 
