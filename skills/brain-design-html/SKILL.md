@@ -37,7 +37,8 @@ imported and edited without breaking what the canvas draws.
   `design_put` with `html_file="/absolute/file.html"` instead of passing its bytes through the model.
   It bundles declared classic scripts, stylesheets, fonts and pictures, and returns a compact `look`.
   With `path` and `expected_hash`, it replaces the active pages as a new version; `page` narrows the
-  replacement to that page. Previous versions and comment events stay. External module graphs and
+  replacement to that page, and `sheet` puts a new one on that sheet (the task's page of screens,
+  brain-design section 2). Previous versions and comment events stay. External module graphs and
   CSS imports must be bundled with the artifact's own build tool first.
   CLI: `brain designs html <file> --path <design> --hash <read-hash>` or `--name <new-name>`.
 - Size frames and screens as a design tool does. A page is a frame: `layout.width`/`height` are its

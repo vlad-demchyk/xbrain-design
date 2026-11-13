@@ -97,6 +97,22 @@ All pages share one project board. A page has optional `layout:{x,y,width,height
 for its place and size on that board, in addition to its reading order and title. A version is the pages and the nodes on
 them, in absolute coordinates on their page.
 
+### Pages of screens (sheets)
+
+A project has **one** design, split into pages as in Figma; each is a canvas of screens. In the
+tools a "page" (`page`, `add_page`) is one screen; a page of screens is a **sheet**.
+
+- Read one sheet, not the whole design: `design_get` with `mode: "summary"` lists the sheets, then
+  `design_get` with `sheet` (its id) gives that sheet's screens and nodes alone.
+- A new task goes on a sheet of its own: `design_patch` with `{"op": "add_sheet", "id": "billing",
+  "title": "T-123 Billing"}`, then `add_page` with `"sheet": "billing"`. A screen put without
+  `sheet` joins the sheet of the screen before it, so always name it. `design_put` with a `page`
+  takes `sheet` too. Not a new design.
+- `set_sheet` (`id`, `title`) renames, `move_sheet` (`id`, `after`) reorders, `remove_sheet` (`id`)
+  removes a sheet with its screens; `set_page` with `sheet` moves a screen.
+- Designs of one project split by the old size limit (`XBrain`, `XBrain · Coordinator`) merge into
+  sheets of one with `design_merge`, **only on the person's words** (`instruction`), `dry_run` first.
+
 | Node | Fields |
 |---|---|
 | `frame` | a screen area or a group: `name`, `x`, `y`, `width`, `height`. Other nodes on the page name it in `parent` |
@@ -204,8 +220,9 @@ asked for. Versions are never edited after that, so the earlier ones stay to be 
   meanwhile, the change lands over theirs if the two touch other layers, fields, style properties,
   HTML elements or pages; a 409 with `conflicts` names what both touched. Read again and ask the
   person before changing any of those: their edit is not to be overwritten silently.
-- A new screen in a project's design (a new section of the product): it goes into that design, never
-  into a design of its own because the first is big. `design_patch` with `op:copy_page` from the page
+- A new screen in a project's design (a new section of the product): it goes into that design, on the
+  sheet of its task (section 2), never into a design of its own because the first is big. Limits
+  count per sheet. `design_patch` with `op:copy_page` from the page
   that shares its shell (the same window, bar and side panel), then change the copy's content: one
   `design_put` with that `page` and its `html` node, or `op:edit_html` on its layers. Read the copy
   back with `design_snapshot` before saying it is done. A refusal that the design "holds at most" says
@@ -276,7 +293,8 @@ limited number of them.
 1. `brain designs export <design> --to <folder>`.
 2. Write the changed and new boards into the folder, keeping each board file's wrapper, and update
    titles, order and positions in `canvas.json`.
-3. `brain designs import <folder> --dry-run`, read what it would change, then the import.
+3. `brain designs import <folder> --dry-run`, read what it would change, then the import. New
+   screens of a task: `--sheet "<the task's sheet>"` (id or title; made when missing).
 4. Look at the result as pictures before reporting it (brain-design-visual-qa).
 
 ## 6. Comments
@@ -327,9 +345,10 @@ repository finds the daemon. Send the token in the `x-brain-token` header, JSON 
 |---|---|
 | `design_inbox` | `GET /design/inbox?project=&path=&awaiting=agent` |
 | `design_list` | `GET /designs?project=&task=&has_open=true&implementation=pending` |
-| `design_get` | `GET /design?path=Designs%2FName&version=&page=&comments=open` |
-| `design_put` | `POST /design` with `name` or `path` + `expected_hash`, `pages`, `page`, `page_title`, `after`, `nodes`, `note`, `project`, `task` |
-| `design_patch` | `POST /design/patch` with `path`, `expected_hash`, `base_version`, `ops`, `page`, `note` |
+| `design_get` | `GET /design?path=Designs%2FName&version=&sheet=&page=&comments=open` |
+| `design_put` | `POST /design` with `name` or `path` + `expected_hash`, `pages`, `page`, `page_title`, `after`, `sheet`, `nodes`, `note`, `project`, `task` |
+| `design_patch` | `POST /design/patch` with `path`, `expected_hash`, `base_version`, `ops`, `page`, `sheet`, `note` |
+| `design_merge` | `POST /design/merge` with `path`, `expected_hash`, `from`, `dry_run`, and only on the person's words |
 | `design_link` | `POST /design/links` with `task`, `path`, `page`, `node`, `element`, `note`, `remove`, `done`, `evidence`; `GET /design/links?task=` |
 | `design_comment` | `POST /design/comment` with `path`, `text`, `thread`, `page`, `node`, `element`, `x`, `y` |
 | `design_resolve` | `POST /design/resolve` with `path`, `thread`, `text`, `version`, `reopen` |
@@ -347,7 +366,8 @@ write it into a design or a note. The `look` of each answer is there as well.
 
 ## 10. What not to do
 
-- Do not make a second design of one that exists; add a version.
+- Do not make a second design of one that exists; add a version, and a sheet for a new task.
+- Do not merge designs (`design_merge`) without the person's words.
 - Do not resolve a comment you have not fixed (brain-design-comments).
 - Do not put a screen its scripts draw into a Design (brain-design-html).
 - Page scripts go in an IIFE or `type="module"`, with no global names; `design_put` warns about

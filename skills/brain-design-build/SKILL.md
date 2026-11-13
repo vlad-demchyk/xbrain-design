@@ -26,7 +26,9 @@ read ones (`design_list`, `design_get`, `design_render`, `design_elements`), `wr
 
 A whole design can be hundreds of kilobytes. Read in this order and stop when you have enough:
 
-1. `design_get` with `mode: "summary"`: the pages, their status, the versions.
+1. `design_get` with `mode: "summary"`: the sheets (pages of screens), the screens, their status,
+   the versions. Then `design_get` with `sheet` reads that sheet's screens alone (brain-design,
+   "Pages of screens").
 2. `design_render` with the `page`: the page as one HTML document, the markup the window draws.
    Save it to a file and open it in a browser when you need to see it; do not paste it whole into
    your reply. `design_snapshot` gives the page, or one `node`, as a picture to put beside a

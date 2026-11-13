@@ -33,6 +33,10 @@ board sizes and time of the last sync); the window's Synchronise button starts y
    whose fingerprint is the same adds nothing, a changed one becomes a new version of its design, and
    the version, the sizes and the time are recorded. Tell the person which designs changed, with the
    `look` links of the designs that gained a version.
+   New boards go on the sheet of their canvas group (made when missing). Boards for a task:
+   `--sheet "<sheet id or title>"` puts the new ones on that sheet (made when missing). A canvas
+   whose design was merged into another is imported into that one; a long group goes on as another
+   sheet, never a new design.
 
 A board is read again only when its size changed, so an edit that keeps the size is missed until
 `--all` (step 3). `brain designs sync` with no address lists the canvases the brain follows.

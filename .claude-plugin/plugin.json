@@ -1,7 +1,7 @@
 {
   "name": "xbrain-design",
   "displayName": "XBrain Design",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A general design plugin: named styles and themes, patterns and a glossary of their parameters, the decisions and hooks that make designs strong with how to build them, choosing a direction by the product's type, UX rules and checklists, motion, design systems with Cyrillic type, accessibility (WCAG 2.2 AA), and the XBrain brain's designs (canvas, versions, build from a design, comments, sync, visual QA).",
   "author": {
     "name": "Vlad Demchyk"
