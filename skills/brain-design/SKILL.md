@@ -212,7 +212,8 @@ asked for. Versions are never edited after that, so the earlier ones stay to be 
   Picture each changed page once, in one variant; its other widths and theme only when the change
   depends on them (a size, a wrap, a colour, a token of one mode). Regenerating pages (a
   `design_put` of a whole sheet, a script over every page, export and import) is for a new sheet or
-  a rework the person asked for, never for a round of remarks: it costs ten times the tokens and
+  a rework the person asked for, never for a round of remarks: on a 64-screen sheet it cost 76
+  thousand tokens before the generator and the put, an edit of one screen in four variants 31 thousand, and it
   touches pages nobody asked about.
 - One page: `design_put` with the `path`, the `expected_hash`, a `page` (its id) and that page's
   `nodes`. Only that page changes; the others stay as they are. A `page` that is not there yet is
