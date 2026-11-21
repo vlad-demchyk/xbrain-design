@@ -53,15 +53,21 @@ imported and edited without breaking what the canvas draws.
 
 ## 2. Editing HTML screens
 
-Use `design_elements` with `path` and the HTML `node` id first. Its stable layer ids come from the
-source parser; `element` includes only that layer's original markup. Never serialize the iframe DOM
+Use `design_elements` with `path` and the HTML `node` id first, or the screen's `page` in place of
+the node. Its stable layer ids come from the source parser; `element` answers only that layer's
+original markup and its branch of the tree. For a text fix, `find` with the words as they stand on
+the screen answers only the layers that hold them (`own` is a layer's words beside its children),
+so the tree is never read whole for a word. Never serialize the iframe DOM
 back into a saved screen: it contains preview controls and transient states.
 
 Send `design_patch` against the returned hash: every layer an edit touches, on every page that
 carries it, in one call, and no other page. Operations:
 
 - `op:edit_html` with `id` (HTML node), `element` (layer), `styles` (CSS property map, null removes),
-  `attributes` (string or null), or `text` on a leaf. The source's other bytes and children stay.
+  `attributes` (string or null), or `text`: a leaf's whole text, or the own words of a layer with
+  children (a heading beside its count badge, a label beside its icon), the children kept. When the
+  words are inside the children or split around them, the refusal names the layers to set instead.
+  The source's other bytes and children stay. A text fix is never `op:set` of the node's whole html.
 - `action:insert` with child `html`, `duplicate`, `remove`, or `group` with sibling `elements`.
 - `state:hover|pressed|focus|disabled` saves an element variant; `state:screen:empty|screen:loading|screen:error|screen:success`
   saves screen-specific styles. Successive edits merge. Defaults remain in the original source.

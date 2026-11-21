@@ -206,7 +206,7 @@ asked for. Versions are never edited after that, so the earlier ones stay to be 
 
 - A round of the person's remarks is an edit, the most common write and the cheapest: read only
   the pages the remarks name (`design_get` with the `page`, `design_elements` for an HTML screen's
-  layers), then one `design_patch` that changes those layers (`set`, `op:edit_html`,
+  layers, with `find` for the words a remark quotes), then one `design_patch` that changes those layers (`set`, `op:edit_html`,
   `op:set_resource` for a token), with one op for each page that carries the layer (a page made
   per width or per theme is a page of its own). No other page is sent, rendered or pictured.
   Picture each changed page once, in one variant; its other widths and theme only when the change
