@@ -4,14 +4,14 @@
     "name": "Vlad Demchyk"
   },
   "metadata": {
-    "description": "XBrain Design: an optional plugin of the XBrain ecosystem with design skills (named styles, patterns and a glossary, the brain's designs, motion, quality, accessibility), agents and starter templates for Claude Code and Claude Desktop."
+    "description": "XBrain Design: an optional plugin of the XBrain ecosystem with general design skills (named styles, patterns and a glossary, motion, design systems, quality, accessibility), agents and starter templates for Claude Code, Codex and Claude Desktop."
   },
   "plugins": [
     {
       "name": "xbrain-design",
       "source": "./",
-      "description": "Design for your own products and the XBrain brain's designs, from value to code: named styles (canvas-light, studio-cut, ink-play and nine more), about fifty patterns with parameters, a glossary of names, how the ecosystem's sites are built, motion, quality and accessibility.",
-      "version": "0.4.4"
+      "description": "Design for your own products, from value to code: named styles (canvas-light, studio-cut, ink-play and nine more), about fifty patterns with parameters, a glossary of names, how the ecosystem's sites are built, motion, design systems, quality and accessibility.",
+      "version": "0.5.0"
     }
   ]
 }

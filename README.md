@@ -3,13 +3,16 @@
 A general plugin for strong, varied and effective designs: styles, themes, decisions, the hooks that hold attention and how to build them, from the product's value to code. Built for Claude Code and
 Claude Desktop; XBrain offers it in its library as a plugin for the whole system.
 
+This plugin is general design craft a person adds to their agents. The XBrain brain's own design
+skills (the canvas, versions, code from a design, comments, sync, visual QA) are part of XBrain's
+core since 0.5.0 of this plugin.
+
 Start with the `design-start` skill: it sets the order of work and names the result to keep at each step.
 
 ## Skills
 
 | Skill | What it does |
 |---|---|
-| `brain-design`, `brain-design-build`, `brain-design-comments`, `brain-design-html`, `brain-design-sync`, `brain-design-visual-qa` | Designs kept in the XBrain brain: the canvas, versions, building code from a design, comments, HTML screens, sync with Claude Design, visual QA. Moved here from XBrain's core, so design is a plugin a person installs when they want it |
 | `design-start` | The order of work and the result of each step; design decisions: the person's own come first; `references/decisions.md` holds worked defaults |
 | `design-types` | Design types with their sizes, states and checks: site, product page, pricing, docs, app screen, onboarding, email, carousel, ad, cover, store screenshots, deck, video, brand kit, design system |
 | `design-styles` | Named styles (the ecosystem's own: canvas-light of XBrain, studio-cut of studio.xformat, ink-play of Coach, and nine more), about fifty named patterns, and a glossary of names and parameters so a design is asked for by name |
@@ -37,8 +40,9 @@ so one file recolours them for a product. With XBrain the same set is the design
 
 ## Works with
 
-- **XBrain**: designs live in the brain's `Designs/`; the brain-design skills that work with them are
-  part of this plugin. XBrain lists the plugin in its library, where it is installed for all of a
+- **XBrain**: designs live in the brain's `Designs/`; the skills that work with them (brain-design,
+  brain-design-build, -comments, -html, -sync, -visual-qa) are the brain's own and come with XBrain's
+  core plugin to every agent, so this plugin carries only general design. XBrain lists the plugin in its library, where it is installed for all of a
   person's agents (globally) and is never required; the decisions note `Docs/Дизайн/Рішення з дизайну` is the living copy of
   `references/decisions.md`.
 - **xbrain-marketing**: positioning, copy, conversion, SEO and platform playbooks.
@@ -49,5 +53,7 @@ so one file recolours them for a product. With XBrain the same set is the design
 
 - Claude Code: add this folder (or its GitHub repository) as a plugin marketplace, then install
   `xbrain-design`.
+- Codex: `codex plugin marketplace add vlad-demchyk/xbrain-design`, then `codex plugin add
+  xbrain-design@xbrain-design`; XBrain's library does both for Claude Code and Codex.
 - Claude Desktop: `scripts/build-zip.sh`, then Customize → Plugins → Add → Upload plugin with
   `dist/xbrain-design-<version>.zip`.
