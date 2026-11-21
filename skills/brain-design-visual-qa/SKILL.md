@@ -7,6 +7,13 @@ description: "Checks a brain design by looking at it: exports its pages, renders
 
 A design is judged by how its screens look and whether their logic holds, not by their markup.
 
+## 0. An edit is checked where it changed
+
+After a round of remarks patched a few layers (brain-design section 5), picture only the pages the
+patch changed, `design_snapshot` with the `page` (or the `node`), in one variant; another width or
+theme only when the change depends on it. No export, no pictures of the rest. The sections below
+are for a whole design: a new sheet, a review the person asked for, a redesign.
+
 ## 1. Export once, work on files
 
 - `brain designs export <design> --to <folder>` writes one board file per page and `canvas.json`
@@ -21,7 +28,7 @@ A design is judged by how its screens look and whether their logic holds, not by
 - A headless browser at each page's real width (390, 768, 1280, or the editor's full width), for
   example `<chrome> --headless=new --hide-scrollbars --screenshot=<png> --window-size=<w>,<h>
   file://<page>`, then scale the picture down to read it.
-- Look at every page you change and at a sample of the rest.
+- In a review of the whole design, look at every page you change and at a sample of the rest.
 
 ## 3. What to look for
 
@@ -36,6 +43,9 @@ A design is judged by how its screens look and whether their logic holds, not by
 | Lint | what `design_lint` finds on the native layers: unnamed frames and shapes, text under 4.5:1 (3:1 large), gaps a few units apart, colours off the design's tokens; fix each by its node with `design_patch` |
 
 ## 4. Many pages as one version
+
+For changes on most pages of a sheet. A fix of a few layers on a few pages is one `design_patch`
+(brain-design section 5), not an export and import.
 
 - Build changed pages from the shell of an existing one (its tokens, icons, navigation) and swap
   only the content; a global fix (navigation items, a persona, a removed duplicate) is a script over

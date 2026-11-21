@@ -204,6 +204,16 @@ round of changes) fold into your own latest version as you make them, so keep wr
 Ask for a version of its own with `new_version: true` only for a copy or a deep rework the person
 asked for. Versions are never edited after that, so the earlier ones stay to be compared.
 
+- A round of the person's remarks is an edit, the most common write and the cheapest: read only
+  the pages the remarks name (`design_get` with the `page`, `design_elements` for an HTML screen's
+  layers), then one `design_patch` that changes those layers (`set`, `op:edit_html`,
+  `op:set_resource` for a token), with one op for each page that carries the layer (a page made
+  per width or per theme is a page of its own). No other page is sent, rendered or pictured.
+  Picture each changed page once, in one variant; its other widths and theme only when the change
+  depends on them (a size, a wrap, a colour, a token of one mode). Regenerating pages (a
+  `design_put` of a whole sheet, a script over every page, export and import) is for a new sheet or
+  a rework the person asked for, never for a round of remarks: it costs ten times the tokens and
+  touches pages nobody asked about.
 - One page: `design_put` with the `path`, the `expected_hash`, a `page` (its id) and that page's
   `nodes`. Only that page changes; the others stay as they are. A `page` that is not there yet is
   added (`page_title` names it, `after` places it).
@@ -287,7 +297,8 @@ same `design_patch` operations. A run of the person's edits folds into their lat
 ## 5c. Many pages at once
 
 A change across many pages (a redesign, a navigation fix on every screen, a batch of new screens) is
-one new version, not one `design_put` per page: each call adds a version, and a design holds a
+one new version, not one `design_put` per page. A change of a few layers on a few pages is not this:
+it is one `design_patch` (section 5). each call adds a version, and a design holds a
 limited number of them.
 
 1. `brain designs export <design> --to <folder>`.

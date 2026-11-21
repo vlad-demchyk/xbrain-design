@@ -57,7 +57,8 @@ Use `design_elements` with `path` and the HTML `node` id first. Its stable layer
 source parser; `element` includes only that layer's original markup. Never serialize the iframe DOM
 back into a saved screen: it contains preview controls and transient states.
 
-Send `design_patch` against the returned hash. Operations:
+Send `design_patch` against the returned hash: every layer an edit touches, on every page that
+carries it, in one call, and no other page. Operations:
 
 - `op:edit_html` with `id` (HTML node), `element` (layer), `styles` (CSS property map, null removes),
   `attributes` (string or null), or `text` on a leaf. The source's other bytes and children stay.
